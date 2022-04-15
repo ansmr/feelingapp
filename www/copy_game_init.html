@@ -1,0 +1,40 @@
+<ons-page ng-controller="game_init">
+    <ons-toolbar>
+       <div class="left"><ons-back-button>戻る</ons-back-button></div>
+       <div class="center">Page2</div>
+    </ons-toolbar>
+    <div class="field">
+
+        <span class="errorMessage" style="color:#ff7f7f;">{{errorMessage}}</span>
+        <h4>参加人数を選んで下さい</h4>
+    	<div id="malePlayers">
+    		<ons-icon icon="fa-user" size="20px" fixed-width="false" style="color:#7f7fff;"></ons-icon> 
+            男性：
+            <select name="maleNumberOfPeople"  ng-model="game.maleNo" id="maleNumberOfPeople">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3"selected="selected">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+    	</div>
+        <br /><br />
+    	<div id="femalePlayers">
+        	<ons-icon icon="fa-user" size="20px" fixed-width="false" style="color:#ff7fbf"></ons-icon> 
+            女性：
+            <select name="femaleNumberOfPeople" ng-model="game.femaleNo" id="femaleNumberOfPeople">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </div>
+        <br /><br />
+        <ons-button class="button" ng-click="ok()">決定</ons-button><br>
+    </div>
+</ons-page>

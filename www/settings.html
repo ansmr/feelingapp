@@ -1,0 +1,41 @@
+<ons-page ng-controller="settings">
+    <ons-modal var="myModal">
+        <div class="wallpaper">
+			<ons-list>
+				<ons-list-item ng-repeat="result in results">
+					{{result.date}}
+				<ons-list-item>
+				<ons-list-item ng-repeat="male in result.males">
+					<ons-icon icon="ion-man" class="maleIcon" fixed-width="false"></ons-icon>
+					{{male.name}} さん ⇒
+					<ons-icon icon="ion-woman" class="femaleIcon" fixed-width="false"></ons-icon>
+					{{result.females[male.select].name}}さん
+				 </ons-list-item>
+				<ons-list-item ng-repeat="female in result.females">
+					<ons-icon icon="ion-woman" class="femaleIcon" fixed-width="false"></ons-icon>
+					{{female.name}}さん ⇒
+					<ons-icon icon="ion-man" class="maleIcon" fixed-width="false"></ons-icon>
+					{{result.males[female.select].name}}さん
+				</ons-list-item>
+			</ons-list>
+		</div>
+        <ons-button modifier="dark" onclick="delHistory()">履歴消去</ons-button>
+		<ons-button modifier="dark" onclick="myModal.hide()">閉じる</ons-button>
+	</ons-modal>
+
+	<ons-toolbar>
+	<div class="left">
+		<ons-back-button>戻る</ons-back-button>
+	</div>
+	<div class="center">Settings</div>
+	<div class="right" style="color: #fff" ng-click="myModal.show()">過去履歴</div>
+	</ons-toolbar>
+	<div class="settings-header">Share</div>
+
+	<ons-list modifier="inset" class="settings-list">
+		<ons-list-item>
+			結果よいしょモード
+			<ons-switch modifier="list-item"{{correction}}></ons-switch>
+		</ons-list-item>
+	</ons-list>
+</ons-page>

@@ -1,0 +1,35 @@
+<ons-page ng-controller="game_init">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>戻る</ons-back-button>
+        </div>
+        <div class="center">人数選択</div>
+    </ons-toolbar>
+    <div class="field">
+
+        <span class="errorMessage">{{errorMessage}}</span>
+        <h4>参加者を登録して下さい</h4>
+        <ons-button modifier="outline" ng-click="addMale()"><ons-icon icon="ion-man" class="maleIcon" fixed-width="false"></ons-icon>&nbsp;&nbsp;追加</ons-button>
+        <ons-button modifier="outline" ng-click="addFemale()"><ons-icon icon="ion-woman" class="femaleIcon" fixed-width="false"></ons-icon>&nbsp;&nbsp;追加</ons-button>
+        <br />
+        <br />
+        <ons-scroller>
+        <ons-list>
+            <ons-list-header>男性</ons-list-header>
+                <ons-list-item ng-repeat="male in males">
+                    <ons-icon icon="ion-android-person" class="maleIcon" fixed-width="false"></ons-icon>
+                    <input type="text" class="text-input text-input--transparent" ng-model="male.name"  placeholder="名前を入力" />
+                </ons-list-item>
+            <ons-list-header>女性</ons-list-header>
+            <ons-list-item ng-repeat="female in females">
+                <ons-icon icon="ion-android-person" class="femaleIcon" fixed-width="false"></ons-icon>
+                <input type="text" class="text-input text-input--transparent" ng-model="female.name"  placeholder="名前を入力" />
+            </ons-list-item>
+        </ons-list>
+        </ons-scroller>
+        <br />
+        <br />
+        <ons-button class="button" ng-click="ok()">決定</ons-button>
+        <br>
+    </div>
+</ons-page>

@@ -1,0 +1,13 @@
+<ons-page ng-controller="select">
+    <br>
+    <br>
+    <div class="centerMessage">{{select.name}}さんの番です！</div>
+    <br>
+        <ons-list>
+            <ons-list-header>下から好みの人を選んで下さい。</ons-list-header>
+            <ons-list-item modifier="tappable" ng-repeat="list in select.list" ng-click="selMember($index)" >
+                <ons-icon icon="ion-android-person" class="{{iconClass}}" fixed-width="false"></ons-icon>
+            {{list.name}}
+            </ons-list-item>
+        </ons-list>
+</ons-page>
